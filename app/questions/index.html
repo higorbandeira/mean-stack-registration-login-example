@@ -1,0 +1,16 @@
+﻿<h1>My Questions</h1>
+<div class="form-container">
+    <form method="post"> 
+        <div class="form-group" style="display: flex" ng-repeat="question in vm.questions">
+            <input type="text" class="form-control" ng-model="question" ng-blur="vm.updateVector($index, question)" required />
+            <button class="btn btn-danger" style="width: 34px; margin-left: 4px" ng-click="vm.deleteQuestion($index)">-</button>
+        </div>
+        <div class="form-group" style="display: flex">
+            <input type="text" class="form-control" ng-model="vm.newQuestion"/>
+            <button class="btn btn-primary" style="width: 34px; margin-left: 4px" ng-click="vm.addQuestion()">+</button>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" ng-click="vm.saveQuestion()">Save</button>
+        </div>
+    </form>
+</div>
